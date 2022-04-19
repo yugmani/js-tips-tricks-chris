@@ -62,3 +62,51 @@ console.log(fruits); //(3)["Apple", "Orange", "Pear"]
 fruits.length = 4;
 console.log(fruits); //["Apple", "Orange", "Pear", undefined]
 // last item is 'undefined' !!
+
+// Remove duplicates from an array
+// ------------------------------------------
+
+//Using ES6 method: Set object
+// We created a new Set object using the given array, then spread it into a new array.
+const numbers = [10, 5, 7, 10, 3, 20, 10, 7];
+const noDuplicates = [...new Set(numbers)];
+
+console.log(noDuplicates); //[10, 5, 7, 3, 20]
+
+//Improve large number’s readability
+//-------------------------------------------
+
+//to make large numbers more readable, you can use the new numeric separator introduced in ES2021
+//The numeric separator is just for developers to read large numbers easier, it won’t make any change to their value
+// const largeNum = 3715000000000000;  //not easily readable
+
+const largeNum = 3_715_000_000_000_000;
+console.log(largeNum);
+// 3715000000000000 ->no change to its value
+
+//Convert number to string
+//-------------------------------------------
+
+//You can concatenate the number with an empty string ''.
+const myNum = 7654321;
+console.log(typeof myNum, myNum); //number 7654321
+const numToString = myNum + '';
+console.log(typeof numToString, numToString); //string 7654321
+
+//Alternative Way: Using String() method
+const newString = String(myNum);
+console.log(typeof newString, newString); //string 7654321
+
+//Convert string to number
+//-------------------------------------------
+
+//The + sign added in front of the string will do the trick and convert it to a string.
+let myString = '123';
+console.log(typeof myString, myString); //string 123
+
+let stringToNumber = +myString;
+console.log(typeof stringToNumber, stringToNumber); //number 123
+
+//Alternative : using Number() method
+let newNumber = Number(myString);
+console.log(typeof newNumber, newNumber); //number 123
